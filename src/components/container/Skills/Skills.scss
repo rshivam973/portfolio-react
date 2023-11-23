@@ -31,8 +31,8 @@
   max-width: 700px;
   row-gap: 4rem;
 
-  @media screen and(max-width: 500px) {
-    grid-template-columns: repeat(2,1fr);
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
   .tools {

@@ -7,10 +7,10 @@ import { SiMongodb } from "react-icons/si";
 // import portfolio from "./assets/portfolio.jpg"
 import work1 from "./assets/work1.jpg";
 import work2 from "./assets/work2.jpg";
-// import work3 from "./assets/work3.png";
-// import work4 from "./assets/work4.png";
-// import work5 from "./assets/work5.png";
-// import work6 from "./assets/work6.png";
+import work3 from "./assets/work3.jpg";
+import work4 from "./assets/work4.png";
+import work5 from "./assets/work5.png";
+import work6 from "./assets/work6.jpg";
 import { motion } from 'framer-motion'
 
 export const navLinks = ["home", "about", "skills", "portfolio", "contact"]
@@ -85,40 +85,40 @@ export const workImages = [
   {
     id: 2,
     img: work2,
-    giturl:"https://github.com/rshivam973",
-    deploy:"https://movies-d.vercel.app/",
+    giturl:"https://github.com/rshivam973/next-portfolio",
+    deploy:"https://shivam-codes.vercel.app/",
     name: "project 2",
     category: "web"
   },
   {
     id: 3,
-    img: work1,
-    giturl:"https://github.com/rshivam973",
+    img: work3,
+    giturl:"https://github.com/rshivam973/MoviesDekho",
     deploy:"https://movies-d.vercel.app/",
     name: "project 3",
     category: "web"
   },
   {
     id: 4,
-    img: work1,
-    giturl:"https://github.com/rshivam973",
-    deploy:"https://movies-d.vercel.app/",
+    img: work4,
+    giturl:"https://github.com/rshivam973/ETHShare",
+    deploy:"https://ethshare.netlify.app/",
     name: "project 4",
     category: "app"
   },
   {
     id: 5,
-    img: work1,
-    giturl:"https://github.com/rshivam973",
-    deploy:"https://movies-d.vercel.app/",
+    img: work5,
+    giturl:"https://github.com/rshivam973/facebook-phishing-frontend",
+    deploy:"https://facebook0-new.netlify.app/",
     name: "project 5",
     category: 'app'
   },
   {
     id: 6,
-    img: work1,
-    giturl:"https://github.com/rshivam973",
-    deploy:"https://movies-d.vercel.app/",
+    img: work6,
+    giturl:"https://github.com/rshivam973/react-native-weather-app",
+    deploy:"https://github.com/rshivam973/react-native-weather-app",
     name: "project 6",
     category: "design"
   }

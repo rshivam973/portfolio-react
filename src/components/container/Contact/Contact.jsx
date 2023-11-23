@@ -1,23 +1,30 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import "./Contact.scss";
 import { contacts } from '../../../Data';
 import { socialIcons } from '../../../Data';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const form = useRef();
-  const successmsg="The information has been shared sucessfully to the owner!! You will receive a confirmation mail shortly."
-  const sendEmail = (e) => {
+  const [loading, setLoading] = useState(false);
+  const successmsg="The information has been shared sucessfully to the owner!!"
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
-      .then((result) => {
-          alert(successmsg);
-      }, (error) => {
-          alert(error.text);
-      });
+    setLoading(true);
+
+    try {
+      await emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY);
+      toast.success(successmsg);
       e.target.reset();
+    } catch (error) {
+      toast.error(error.text);
+    } finally {
+      setLoading(false);
+    }
   };
 
 
@@ -87,56 +94,22 @@ const Contact = () => {
           <motion.div
             whileHover={{ scale: 1.1 }}
             transition={{duration: 0.3}}
-            className="btn" 
+            className="btn text-white" 
           >
-            {/* <a href="#">Send</a> */}
-            <input type="submit" value="Send" className='sendtxt'></input>
+            {loading ? (
+              <div className="loader" />
+            ) : (
+              <input type="submit" value="Send" className='sendtxt'></input>
+            )}
           </motion.div>
         </motion.div>
         </form>
         
       </div>
+      <ToastContainer />
     </div>
   )
 }
 
 export default Contact
 
-
-
-
-
-
-
-
-// <!-- Include EmailJS library -->
-// <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-// <!-- Create your form -->
-// <form id="my-form">
-//   <input type="text" name="name" placeholder="Name" required>
-//   <input type="email" name="email" placeholder="Email" required>
-//   <textarea name="message" placeholder="Message" required></textarea>
-//   <button type="submit">Send</button>
-// </form>
-
-// <!-- Initialize EmailJS with your user ID -->
-// <script>
-//   (function(){
-//     emailjs.init('YOUR_USER_ID');
-//   })();
-// </script>
-
-// <!-- Add event listener to form submission -->
-// <script>
-//   document.getElementById('my-form').addEventListener('submit', function(event) {
-//     event.preventDefault(); // Prevent default form submission behavior
-//     emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-//       .then(function(response) {
-//         console.log('SUCCESS!', response.status, response.text);
-//       }, function(error) {
-//         console.log('FAILED...', error);
-//       });
-//       this.reset(); // Clear form data after submission
-//   });
-// </script>

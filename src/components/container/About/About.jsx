@@ -4,7 +4,7 @@ import resume from '../../../assets/Shivam Resume.pdf'
 
 import { motion } from 'framer-motion';
 import { bios } from '../../../Data';
-import ProfilePic from "../../../assets/ProfilePic.jpeg"
+import ProfilePic from "../../../assets/ProfilePic.jpg"
 const About = () => {
 
 
@@ -35,9 +35,9 @@ const About = () => {
           transition={{ duration: 1 }}
         >
 
-          <p>I am a MERN FULL STACK DEVELOPER💻 , I have in depth knowledge of HTML5, CSS3, Vanilla JavaScript, React.js, Node.js, Express.js, MongoDB and Git.
+          <p>I am a MERN FULL STACK DEVELOPER , I have good knowledge of HTML5, CSS3, Vanilla JavaScript, React.js, NextJS, React Native, Node.js, Express.js, MongoDB and Git.
 
-I am good at Data Structures and Algorithms. I am interested in devising a better problem solving method for challenging tasks.</p>
+          I am good at Data Structures and Algorithms. I am interested in devising a better problem solving method for challenging tasks.</p>
           {bios.map(bio => {
             return (
               <div className="bio" key={bio.id}>

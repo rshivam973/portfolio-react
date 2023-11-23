@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfilePic from "../../../assets/ProfilePic.jpeg"
+import ProfilePic from "../../../assets/ProfilePic.jpg"
 import "./Home.scss"
 import { motion } from 'framer-motion'
 
@@ -47,17 +47,17 @@ const Home = () => {
           className="web"
 
         >
-          Web Developer
+          Android Developer
         </div>
         <div
           className="ui"
         >
-          Problem Solver
+          Web Developer
         </div>
         <div
           className="freelance"
         >
-          Coder
+          Problem Solver
         </div>
       </div>
     </motion.div>
